@@ -7,7 +7,6 @@ import store from './store/default';
 import axios from 'axios';
 
 window.axios = axios;
-window.movieDB = require('./moviedb.json');
 
 Vue.use(VueRouter);
 

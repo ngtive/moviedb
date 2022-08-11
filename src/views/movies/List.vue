@@ -39,15 +39,15 @@ export default {
 
     async beforeRouteEnter(to, from, next) {
         try {
-            let genreResult = await axios.get(movieDB.base_url + '/genre/movie/list', {
+            let genreResult = await axios.get(store.state.base_url + '/genre/movie/list', {
                 params: {
-                    api_key: movieDB.api_key,
+                    api_key: store.state.api_key,
                 }
             });
 
-            let movies = await axios.get(movieDB.base_url + '/discover/movie', {
+            let movies = await axios.get(store.state.base_url + '/discover/movie', {
                 params: {
-                    api_key: movieDB.api_key,
+                    api_key: store.state.api_key,
                     sort_by: 'popularity.desc',
                 }
             });
