@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-color-green {
+    background-color: #11B980;
+}
+
+.bg-color-gray {
+    background-color: #E2E2E2;
+}
+
+.bg-color-blue {
+    background-color: #549DF2;
+}
+
+.btn {
+    @apply px-3 py-2 border border-gray-600 rounded-2xl text-sm;
+}
+
+.btn-primary {
+    @apply bg-blue-400 text-white border-0 hover:shadow;
+}
