@@ -1,7 +1,6 @@
 import Vuex from "vuex";
 import Vue from "vue";
 
-
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -13,7 +12,7 @@ const store = new Vuex.Store({
 
         search: [],
         page: 1,
-    }
+    },
 });
 
 window.store = store;

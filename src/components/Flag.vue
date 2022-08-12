@@ -1,7 +1,5 @@
 <template>
-    <img :src="flagSvg"
-         class="w-8 rounded-full border"
-         :alt="iso">
+  <img :alt="iso" :src="flagSvg" class="w-8 rounded-full border"/>
 </template>
 
 <script>
@@ -11,19 +9,16 @@ export default {
         iso: String,
     },
 
-
     computed: {
         flagSvg() {
             if (!this.iso) {
                 return null;
             }
 
-            return '/assets/icons/flags/' + this.iso.toLowerCase() + '.svg';
+            return "/assets/icons/flags/" + this.iso.toLowerCase() + ".svg";
         },
-    }
-}
+    },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

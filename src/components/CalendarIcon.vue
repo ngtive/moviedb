@@ -1,13 +1,11 @@
 <template>
-    <img src="/assets/icons/calendar-icon.png" class="w-5" alt="Calendar icon">
+  <img alt="Calendar icon" class="w-5" src="/assets/icons/calendar-icon.png"/>
 </template>
 
 <script>
 export default {
-    name: "CalendarIcon"
-}
+    name: "CalendarIcon",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
