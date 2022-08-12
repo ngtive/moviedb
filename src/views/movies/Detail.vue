@@ -61,7 +61,7 @@
                   read-only
                 ></StarRating>
                 <span class="inline"
-                  >{{ movie.vote_average.toFixed(1) }} ({{
+                >{{ movie.vote_average.toFixed(1) }} ({{
                     movie.vote_count.toLocaleString()
                   }}
                   votes)</span
@@ -81,7 +81,7 @@
               <a
                 :href="'https://imdb.com/title/' + movie.imdb_id"
                 class="text-sky-500 underline"
-                >Link</a
+              >Link</a
               >
             </li>
             <li class="detail-row">
@@ -109,14 +109,14 @@
 
     <div class="mt-10">
       <b>Credit: </b>
-      <ul class="casts flex flex-wrap mt-4">
-        <li v-for="(cast, key) in casts.casts" :key="key">
+      <div class="flex flex-wrap items-center">
+        <div v-for="(cast, key) in casts.casts" :key="key" class="w-1/6 m-4">
+          <img v-if="cast.profile_path"
+               class="rounded w-14 h-20 inline"
+               :src="$store.state.image_url + '/w500' + cast.profile_path">
           &nbsp;{{ cast.name }}
-        </li>
-        <li v-if="casts.more > 0" class="more">
-          &nbsp;and {{ casts.more }} more.
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -127,7 +127,7 @@ import StarRating from "vue-star-rating";
 
 export default {
   name: "Detail",
-  components: { Flag, StarRating },
+  components: {Flag, StarRating},
   data: function () {
     return {
       movie: store.state.movie,
@@ -149,6 +149,7 @@ export default {
         .map((i) => ({
           popularity: i.popularity,
           name: i.name,
+          profile_path: i.profile_path,
         }))
         .sort((a, b) => (a.popularity < b.popularity ? 1 : -1));
 
@@ -158,7 +159,7 @@ export default {
           casts: sorted_casts.slice(0, 10),
         };
       } else {
-        return { more: 0, casts: sorted_casts };
+        return {more: 0, casts: sorted_casts};
       }
     },
   },
@@ -209,8 +210,7 @@ ul.detail {
   gap: 18px;
 }
 
-ul.genre li:not(:last-child):after,
-ul.casts li:not(:nth-last-child(2)):not(.more):after {
+ul.genre li:not(:last-child):after {
   content: ",";
 }
 
