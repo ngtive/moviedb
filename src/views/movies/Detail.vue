@@ -114,7 +114,7 @@
           <img v-if="cast.profile_path"
                class="rounded w-14 h-20 inline"
                :src="$store.state.image_url + '/w500' + cast.profile_path">
-          &nbsp;{{ cast.name }}
+          <span class="text-xs"> {{ cast.name }}</span>
         </div>
         <div v-if="casts.more > 0" class="w-1/3 lg:w-1/6 m-4">
           <p>And {{ casts.more }} more ...</p>
