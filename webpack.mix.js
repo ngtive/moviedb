@@ -6,6 +6,7 @@ mix.js('src/main.js', 'dist/').vue({version: 2})
     .postCss("src/assets/css/main.css", "dist/assets/css", [
         require("tailwindcss"),
     ])
-    .copy('src/assets/fonts', 'dist/assets/fonts'),
+    .copy('src/assets/fonts', 'dist/assets/fonts')
+    .copy('src/assets/icons', 'dist/assets/icons')
 
 mix.disableNotifications();

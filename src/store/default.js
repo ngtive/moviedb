@@ -9,7 +9,10 @@ const store = new Vuex.Store({
         genre: [],
         image_url: "https://image.tmdb.org/t/p",
         base_url: "https://api.themoviedb.org/3",
-        api_key: "f62f750b70a8ef11dad44670cfb6aa57"
+        api_key: "f62f750b70a8ef11dad44670cfb6aa57",
+
+        search: [],
+        page: 1,
     }
 });
 
