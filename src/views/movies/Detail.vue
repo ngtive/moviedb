@@ -89,7 +89,7 @@
               <a :href="movie.homepage" class="text-sky-500 underline">Link</a>
             </li>
             <li class="detail-row">
-              <b>Countries</b>
+              <b>Production Countries</b>
               <ul class="flex flex-wrap gap-2">
                 <li
                   v-for="country in movie.production_countries"
