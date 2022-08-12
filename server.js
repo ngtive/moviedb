@@ -5,10 +5,10 @@ const server = express();
 server.use("/", express.static(__dirname + "/dist/"));
 
 server.get("/*", (req, res) => {
-    res.sendFile(__dirname + "/dist/index.html");
+  res.sendFile(__dirname + "/dist/index.html");
 });
 
 const port = 8000;
 server.listen(port, function () {
-    console.log("server listening on port " + port);
+  console.log("server listening on port " + port);
 });
